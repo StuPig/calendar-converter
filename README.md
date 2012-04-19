@@ -2,7 +2,7 @@
 calendar-converter
 ==================
 
-公农历互转组件（ date converter between solar and lunar ）
+JS版公农历互转组件（ date converter between solar and lunar ）
 
 ###使用示例（Example）:###
 
@@ -38,7 +38,17 @@ calendar-converter
             , solarTerms: ""            // 节气
             , week: "日"                // 周几
          }
+###特别鸣谢（Thanks loads）：###
+
+---
+该组件是在网络上现有JS版公历转农历插件基础上开发，由于不能确切找出原始开发人员，无法在此列出，特此鸣谢。（This plugin is referenced by many other online resources. I can't list them here for i don't know them or notify them. If any author see this, contact me.）
+
 ###联系方式（Contact）:###
 
 ---
  - StuPig Gong <shouqiang.gong@gmail.com>
+
+###协议许可（License）: ###
+
+---
+ - calendar-converter在遵守MIT许可协议下提供（calendar-converter is available under the terms of the MIT license）
