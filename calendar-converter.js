@@ -383,9 +383,9 @@
     cMonth = cyclical((sYear - 1900) * 12 + sMonth + 12);
 
     //依节气调整二月分的年柱, 以立春为界
-    if(sMonth == 1 && (sDay + 1) == term2) cYear = cyclical(cYear - 1900+36);
+    if(sMonth == 1 && sDay >= term2) cYear = cyclical(sYear - 1900+36);
     //依节气月柱, 以「节」为界
-    if((sDay + 1) == firstNode) cMonth = cyclical((sYear - 1900) * 12 + sMonth + 13);
+    if(sDay >= firstNode) cMonth = cyclical((sYear - 1900) * 12 + sMonth + 13);
     //当月一日与 1900/1/1 相差天数
     //1900/1/1与 1970/1/1 相差25567日, 1900/1/1 日柱为甲戌日(60进制10)
     var dayCyclical = Date.UTC(sYear, sMonth, 1, 0, 0, 0, 0)/86400000 + 25567 + 10;
