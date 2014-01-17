@@ -428,6 +428,7 @@
             var wFtvDate = (tmp2 == 0 ? 7 : 0) + (tmp1 - 1)*7 + tmp2;
             if (wFtvDate == sDay) {
               that.solarFestival += RegExp.$5 + ' ';
+              break;
             }
           }
         }
@@ -439,8 +440,11 @@
       if (item.match(/^(\d{2})(.{2})([\s\*])(.+)$/)) {
         tmp1 = Number(RegExp.$1);
         tmp2 = Number(RegExp.$2);
-        if (tmp1 == lunarMonth && tmp2 == lunarDay) {
+        lMonLen = monthDays(lunarYear, lunarMonth);
+        // 月份是12月，且为最后一天，则设置为春节
+        if ((tmp1 == lunarMonth && tmp2 == lunarDay) || (lunarMonth == 12 && lMonLen == lunarDay)) {
           that.lunarFestival += RegExp.$4 + ' ';
+          break;
         }
       }
     }
