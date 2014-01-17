@@ -9,8 +9,8 @@ JS版公农历互转组件（ date converter between solar and lunar ）
 
         var cc  =new CalendarConverter;
 
-        cc.lunar2solar(new Date(2011, 0, 3)); ---> 2010,11,29
-        cc.solar2lunar(new Date(2010, 10, 29)); ----> 2011, 1, 3
+        cc.solar2lunar(new Date(2011, 0, 3)); ---> 2010,11,29
+        cc.lunar2solar(new Date(2010, 10, 29)); ----> 2011, 1, 3
 
         农历转公历时，如果那一月是那一年的闰月，则需额外传一个参数，才能得到正确的公历日期
 	During the conversion from lunar to solar, if that month is a leap month, then you need to pass an additional parameter.
