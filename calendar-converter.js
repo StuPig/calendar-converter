@@ -132,7 +132,8 @@
     var objDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     var i, leap=0, temp=0
     var baseDate = new Date(1900,0,31)
-    var offset = (objDate - baseDate)/86400000
+    // Mac和linux平台的firefox在此处会产生浮点数错误
+    var offset = Math.round((objDate - baseDate)/86400000)
 
     this.dayCyl = offset + 40
     this.monCyl = 14
