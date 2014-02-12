@@ -443,7 +443,7 @@
         tmp2 = Number(RegExp.$2);
         lMonLen = monthDays(lunarYear, lunarMonth);
         // 月份是12月，且为最后一天，则设置为春节
-        if ((tmp1 == lunarMonth && tmp2 == lunarDay) || (lunarMonth == 12 && lMonLen == lunarDay)) {
+        if ((tmp1 == lunarMonth && tmp2 == lunarDay) || (tmp2 == '00' && lunarMonth == 12 && lMonLen == lunarDay)) {
           that.lunarFestival += RegExp.$4 + ' ';
           break;
         }
