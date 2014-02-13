@@ -132,7 +132,8 @@
     var objDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     var i, leap=0, temp=0
     var baseDate = new Date(1900,0,31)
-    var offset = (objDate - baseDate)/86400000
+    // Mac和linux平台的firefox在此处会产生浮点数错误
+    var offset = Math.round((objDate - baseDate)/86400000)
 
     this.dayCyl = offset + 40
     this.monCyl = 14
@@ -442,7 +443,7 @@
         tmp2 = Number(RegExp.$2);
         lMonLen = monthDays(lunarYear, lunarMonth);
         // 月份是12月，且为最后一天，则设置为春节
-        if ((tmp1 == lunarMonth && tmp2 == lunarDay) || (lunarMonth == 12 && lMonLen == lunarDay)) {
+        if ((tmp1 == lunarMonth && tmp2 == lunarDay) || (tmp2 == '00' && lunarMonth == 12 && lMonLen == lunarDay)) {
           that.lunarFestival += RegExp.$4 + ' ';
           break;
         }
